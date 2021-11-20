@@ -7,14 +7,23 @@
   border-radius: 10px;
   padding: 1rem;
   width: 100%;
+  min-height: 150px;
   @include easeInOut;
-  &.active{
+  position: relative;
+  @media screen and (max-width: 750px) {
+    flex-direction: column;
+  }
+  &.compolete{
     background: rgb(130, 229, 135);
   }
   &:hover{
       transform: scale(1.02) ;
       box-shadow: 1px 1px 2px rgb(218, 213, 213);
-
+  }
+  &.canceled{
+    text-decoration: line-through;
+    color: darkgray;
+    opacity: .85;
   }
 
   .time {
@@ -22,23 +31,38 @@
   }
   .icons {
     display: flex;
+    margin: 1rem 0;
   }
   .description{
 
   }
   .icon {
-   
-    &.delete {
+    &.delete,
+    &.canceled {
       background-color: rgb(230, 77, 77);
     }
     &.edit {
       background-color: rgb(0, 119, 255);
     }
-    &.active {
+    &.compolete {
       background-color: rgb(26, 173, 26);
     }
-    &.unactive {
+    &.uncompolete {
       background-color: rgb(117, 119, 117);
     }
+  }
+
+  .active{
+    position: absolute;
+    top: 2%;
+    right: calc(50% - 30px);
+    background: #1aad1a;
+    font-size: 16px;
+    color: white;
+    padding: 0 0.3rem;
+    border-radius: 5px;
+    width: 60px;
+    @include easeInOut;
+    
   }
 }

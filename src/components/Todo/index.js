@@ -3,18 +3,17 @@ import TodoItem from './TodoItem';
 import { useSelector, useDispatch } from 'react-redux';
 import {
 	selectTodo,
-  } from '../../features/todo/todoSlice';
+  } from '../../features/todos/todoSlice';
 const TodoList = () => {
 	const todos = useSelector(selectTodo);
 
-	console.log(todos, 'todoooo')
 
 
 
     return (
         <ul className='list-group'>
-			{todos.map((todo) => (
-				<TodoItem id={todo.id} completed={todo.completed}  title={todo.title} description={todo.description} completed={todo.completed} />
+			{todos && todos.map((todo) => (
+				<TodoItem id={todo.id} canceled={todo.canceled} active={todo.active} completed={todo.completed}  title={todo.title} description={todo.description} completed={todo.completed} />
 			))}
 	</ul>
     )

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { GrAdd } from "react-icons/gr";
 import { Modal, Button, Input } from "antd";
 import { useDispatch } from "react-redux";
-import { addTodo } from "../features/todo/todoSlice";
+import { addTodo } from "../features/todos/todoSlice";
 
 
 const AddToDo = () => {
@@ -24,6 +24,7 @@ const AddToDo = () => {
     dispatch(addTodo({
       title: task
     }))
+    setTask("")
     setIsModalVisible(false);
   };
 

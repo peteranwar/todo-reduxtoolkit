@@ -1,0 +1,13 @@
+.add-todo{
+    display: flex;
+    justify-content: center;
+    .icon{
+        width: 60px;
+        height: 60px;
+        background-color: #1aad1a;
+        svg path{
+            
+            stroke: white;
+        }
+    }
+}
